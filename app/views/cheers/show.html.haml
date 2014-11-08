@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @cheer.user_id
+%p
+  %b Cheerup:
+  = @cheer.cheerup
+
+= link_to 'Edit', edit_cheer_path(@cheer)
+\|
+= link_to 'Back', cheers_path

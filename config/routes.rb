@@ -1,5 +1,8 @@
 Cheerups::Application.routes.draw do
  
+  resources :cheers
+
+
   devise_for :users
 
   root :to => "cheers#index"
