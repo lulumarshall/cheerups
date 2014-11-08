@@ -1,5 +1,9 @@
 Cheerups::Application.routes.draw do
  
+  get "friendships/create"
+
+  get "friendships/destroy"
+
   resources :cheers
 
 
