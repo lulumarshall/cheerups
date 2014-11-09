@@ -1,5 +1,4 @@
 %h1 Users
 %ul
   - @users.each do |u|
-    %li #{u.email} (#{u.role})
-    = link_to "Add Friend", friendships_path(:friend_id => user), :method => :post  
+    %li #{u.email} (#{u.username})  

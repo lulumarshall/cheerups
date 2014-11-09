@@ -6,7 +6,33 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Users
+User.create!(username:  "Example User",
+             email: "example@cheerup.org",
+             password:              "password",
+             password_confirmation: "password")
 
-attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :description, :role, :image 
+99.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@cheerup.org"
+  password = "password"
+  User.create!(username:             name,
+              email:                 email,
+              password:              password,
+              password_confirmation: password)
+end
 
-User.create(email: "ben@sunderland.eu.com", password: "password", password_confirmation: "password", username: "ben", description: "coder", role: "guest")
+# Cheers
+User.order(:created_at).take(6).each do |user|
+  50.times do
+    user.cheers.create!(cheerup: Faker::Lorem.characters(141))
+  end
+end
+
+# Following relationships
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }

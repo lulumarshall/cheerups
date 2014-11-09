@@ -1,18 +1,22 @@
 Cheerups::Application.routes.draw do
  
-resources :friendships
-
   resources :cheers
 
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }, :controllers => {:registrations => 'users'}
 
   devise_scope :user do
-    get "sign_in", :to => "devise/sessions#new"
-    
+    get "sign_in", :to => "devise/sessions#new" 
     resources :users,  only: [:index]
   end
 
+  resources :users do
+      member do
+        get :following, :followers
+      end
+    end
   root :to => "cheers#index"
+  resources :relationships, only: [:create, :destroy]
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
