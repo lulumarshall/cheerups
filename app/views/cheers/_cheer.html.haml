@@ -1,0 +1,9 @@
+%li{:id => "cheer-#{cheer.id}"}
+  // insert user's avatar here
+  %span.user= link_to cheer.user.username, cheer.user
+  %span.content= cheer.cheerup
+  %span.timestamp
+    Posted #{time_ago_in_words(cheer.created_at)} ago.
+  .show= link_to 'Show', cheer
+  .edit= link_to 'Edit', edit_cheer_path(cheer)
+  .destroy= link_to 'Destroy', cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }     

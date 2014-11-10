@@ -3,6 +3,7 @@ class UsersController < Devise::RegistrationsController
   
   def index
     @users = User.all
+    # @cheers = @user.cheers
   end
 
   def show
@@ -30,7 +31,7 @@ class UsersController < Devise::RegistrationsController
     @user = User.find(params[:id])
     @users = @user.following 
     render 'show_follow' 
-  end 
+  end
 
   def followers
     @title = "Followers"
