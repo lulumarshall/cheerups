@@ -12,6 +12,8 @@ gem 'haml-rails'
 gem 'bourbon'
 gem 'cancancan', '~> 1.9'
 
+gem "rails_12factor", group: :production
+
 group :assets do
   gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
