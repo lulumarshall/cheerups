@@ -1,24 +1,23 @@
-%section.stats
-  = render 'shared/stats'
-  
-%h1 Listing cheers
-
-%table
-  %tr
-    %th User
-    %th Cheerup
-    %th
-    %th
-    %th
-
-  - @cheers.each do |cheer|
+- model_class = Cheer
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
     %tr
-      %td= cheer.user_id
-      %td= cheer.cheerup
-      %td= link_to 'Show', cheer
-      %td= link_to 'Edit', edit_cheer_path(cheer)
-      %td= link_to 'Destroy', cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:user_id)
+      %th= model_class.human_attribute_name(:cheerup)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @cheers.each do |cheer|
+      %tr
+        %td= link_to cheer.id, cheer_path(cheer)
+        %td= cheer.user_id
+        %td= cheer.cheerup
+        %td=l cheer.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_cheer_path(cheer), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), cheer_path(cheer), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-%br
-
-= link_to 'New Cheer', new_cheer_path
+= link_to t('.new', :default => t("helpers.links.new")), new_cheer_path, :class => 'btn btn-primary'

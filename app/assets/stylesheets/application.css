@@ -11,3 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+
+#sidebar {
+	position: absolute;
+	top: 100px;
+
+}
+
+
+.container {
+	padding: 5px;
+}
+
+a {
+	font-size: 15px;
+	font-family: 'Lobster', cursive;
+}
+
+
+.alert {
+	padding: 50px;
+	position: absolute;
+	top: -40px;
+	left: -50px;
+}

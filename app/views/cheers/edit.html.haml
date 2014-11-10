@@ -1,7 +1,4 @@
-%h1 Editing cheer
-
-= render 'form'
-
-= link_to 'Show', @cheer
-\|
-= link_to 'Back', cheers_path
+- model_class = Cheer
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"
