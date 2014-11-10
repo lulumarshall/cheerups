@@ -25,7 +25,7 @@ end
 # Cheers
 User.order(:created_at).take(6).each do |user|
   50.times do
-    user.cheers.create!(cheerup: Faker::Lorem.characters(141))
+    user.cheers.create!(cheerup: Faker::Lorem.words(rand(70..100)).join(' ').truncate(140))
   end
 end
 

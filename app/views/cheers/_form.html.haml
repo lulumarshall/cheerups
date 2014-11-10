@@ -1,16 +1,12 @@
-= form_for @cheer do |f|
-  - if @cheer.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@cheer.errors.count, "error")} prohibited this cheer from being saved:"
-      %ul
-        - @cheer.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .field
-    = f.label :cheerup
-    = f.text_field :cheerup
-  .actions
-    = f.submit 'Save'
+= form_for @cheer, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :user_id, :class => 'control-label'
+    .controls
+      = f.number_field :user_id, :class => 'number_field'
+  .control-group
+    = f.label :cheerup, :class => 'control-label'
+    .controls
+      = f.text_field :cheerup, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), cheers_path, :class => 'btn'

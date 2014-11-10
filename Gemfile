@@ -12,6 +12,12 @@ gem 'haml-rails'
 gem 'bourbon'
 gem 'cancancan', '~> 1.9'
 
+group :assets do
+  gem "therubyracer"
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem 'twitter-bootstrap-rails'
+end
+
 
 group :development, :test do
   gem 'pry-rails'
@@ -20,6 +26,8 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem "nifty-generators"
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  
 end
 
 group :test do
