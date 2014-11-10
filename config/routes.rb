@@ -7,13 +7,14 @@ Cheerups::Application.routes.draw do
   devise_scope :user do
     get "sign_in", :to => "devise/sessions#new" 
     resources :users,  only: [:index]
+    resources :users do
+        member do
+          get :following, :followers
+        end
+      end
   end
 
-  resources :users do
-      member do
-        get :following, :followers
-      end
-    end
+  
   root :to => "cheers#index"
   resources :relationships, only: [:create, :destroy]
   

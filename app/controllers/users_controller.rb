@@ -6,7 +6,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   def show
-      @user = current_user
+      @user = User.find(params[:id])
     end
 
   def create
@@ -24,12 +24,14 @@ class UsersController < Devise::RegistrationsController
     logger.info self.class.ancestors
     super
   end
+
   def following 
     @title = "Following"
     @user = User.find(params[:id])
     @users = @user.following 
     render 'show_follow' 
   end 
+
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
