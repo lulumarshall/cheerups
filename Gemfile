@@ -11,6 +11,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'bourbon'
 gem 'cancancan', '~> 1.9'
+gem 'omniauth-twitter'
 
 group :assets do
   gem "therubyracer"
