@@ -1,0 +1,6 @@
+$('#cheers').append('#{j render(@cheers)}');
+- if @cheers.next_page
+  $('.pagination').replaceWith('#{j will_paginate(@cheers)}');
+- else
+  $('.pagination').remove();
+- sleep 1

@@ -1,8 +1,8 @@
 class CheersController < ApplicationController
   before_filter :set_cheer, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :json
+  respond_to :html, :json, :js
   def index
-    @cheers = Cheer.all
+    @cheers = Cheer.order(:created_at).page(params[:page]).per_page(10)    # @cheers = Cheer.all
     respond_with(@cheers)
   end
 
