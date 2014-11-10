@@ -3,6 +3,7 @@ class UsersController < Devise::RegistrationsController
   
   def index
     @users = User.all
+    @cheers = @user.cheers
   end
 
   def show
@@ -24,12 +25,14 @@ class UsersController < Devise::RegistrationsController
     logger.info self.class.ancestors
     super
   end
+
   def following 
     @title = "Following"
     @user = User.find(params[:id])
     @users = @user.following 
     render 'show_follow' 
   end 
+  
   def followers
     @title = "Followers"
     @user = User.find(params[:id])

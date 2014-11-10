@@ -2,23 +2,10 @@
   = render 'shared/stats'
   
 %h1 Listing cheers
-
-%table
-  %tr
-    %th User
-    %th Cheerup
-    %th
-    %th
-    %th
-
-  - @cheers.each do |cheer|
-    %tr
-      %td= cheer.user_id
-      %td= cheer.cheerup
-      %td= link_to 'Show', cheer
-      %td= link_to 'Edit', edit_cheer_path(cheer)
-      %td= link_to 'Destroy', cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
 = link_to 'New Cheer', new_cheer_path
+
+
+%ol.cheers
+  = render @cheers
+
+
