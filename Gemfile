@@ -5,7 +5,7 @@ gem 'faker', '~> 1.4.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'bootstrap-rails-engine'
 gem 'pg'
 gem 'devise'
 gem 'haml-rails'
