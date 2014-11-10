@@ -36,6 +36,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-rails-engine (3.1.1.0)
+      railties (>= 3.0)
     bourbon (4.0.2)
       sass (~> 3.3)
       thor
@@ -213,6 +215,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap-rails-engine
   bourbon
   cancancan (~> 1.9)
   capybara
