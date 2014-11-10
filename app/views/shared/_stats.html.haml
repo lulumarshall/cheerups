@@ -2,7 +2,8 @@
 .stats
   = link_to 'following', following_user_path(@user)
     #following.stat
-      = @user.following.count
+  = @user.following.count
   = link_to 'followers', followers_user_path(@user)
     #followers.stat
-      = @user.followers.count      
+  = @user.followers.count      
+   end
