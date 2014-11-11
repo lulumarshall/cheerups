@@ -1,7 +1,7 @@
 %li{:id => "cheer-#{cheer.id}"}
 
   // insert user's avatar here
-  %span.user= link_to cheer.user.username, cheer.user
+  %span.user= link_to(cheer.user.username, cheer.user) if (cheer.user && cheer.user.username)
   %span.content= cheer.cheerup
   %span.timestamp
     Posted #{time_ago_in_words(cheer.created_at)} ago.

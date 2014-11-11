@@ -1,4 +1,7 @@
 class CheersController < ApplicationController
+
+  skip_before_filter :verify_authenticity_token
+  
   before_filter :set_cheer, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json, :js
   def index
@@ -20,6 +23,7 @@ class CheersController < ApplicationController
 
   def create
     @cheer = Cheer.new(params[:cheer])
+    @cheer.user_id = current_user.id
     @cheer.save
     respond_with(@cheer)
   end

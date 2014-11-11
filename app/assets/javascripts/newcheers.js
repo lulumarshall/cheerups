@@ -9,18 +9,24 @@ function request(method, url, data){
 
 //add to the Cheer list 
 function appendNewCheer(data){
-  $("%li#cheer-" + "cheer.id'")
+  console.log(data)
+  $('<li id="cheer-'+ data.id + '">')
+
+  console.log(data)
+
+ 
 }    
 
 
 //POST Cheer 
 function createCheer(){
   request("POST", "/cheers", {
-    task:{
-      title: $("#new-cheer").val()
+    cheer:{
+      cheerup: $("#new-cheer").val()
+
     }
   }).success(function(data){
-    //console.log(data);
+    console.log(data);
     $('#new-cheer').val( )
     appendNewCheer(data)
   })
