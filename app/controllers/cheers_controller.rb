@@ -1,6 +1,7 @@
 class CheersController < ApplicationController
   before_filter :set_cheer, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json, :js
+  
   def index
     @cheers = Cheer.order(:created_at).page(params[:page]).per_page(10)    # @cheers = Cheer.all
     respond_with(@cheers)
@@ -32,6 +33,19 @@ class CheersController < ApplicationController
   def destroy
     @cheer.destroy
     respond_with(@cheer)
+  end
+
+  # cheer voting upvote and downvote
+  def upvote
+    @cheer = Cheer.find(params[:id])
+    @cheer.upvote_by current_user
+    redirect_to cheers_path
+  end
+
+  def downvote
+    @cheer = Cheer.find(params[:id])
+    @cheer.downvote_by current_user
+    redirect_to cheers_path
   end
 
   private

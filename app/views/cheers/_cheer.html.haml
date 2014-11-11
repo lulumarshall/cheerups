@@ -5,6 +5,11 @@
   %span.content= cheer.cheerup
   %span.timestamp
     Posted #{time_ago_in_words(cheer.created_at)} ago.
-  .show= link_to 'Show', cheer
+  / .show= link_to 'Show', cheer
   .edit= link_to 'Edit', edit_cheer_path(cheer)
-  .destroy= link_to 'Destroy', cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }     
+  .destroy= link_to 'x', cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %span.upvote= link_to "cheerUp!", cheerup_cheer_path(cheer), method: :put
+  %span.score= cheer.cheerup_score
+  %span.upvote= link_to "cheerDown¡", cheerdown_cheer_path(cheer), method: :put
+  %span.score= cheer.cheerdown_score
+  / %span.score= cheer.score
