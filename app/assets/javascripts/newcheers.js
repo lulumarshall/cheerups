@@ -9,10 +9,9 @@ function request(method, url, data){
 
 //add to the Cheer list 
 function appendNewCheer(data){
-  console.log(data)
-  $('<li id="cheer-'+ data.id + '">' +
-      '')
-
+ $('<li id="cheer-'+ data.id + '">' +
+    '</li>').prependTo("#cheers")
+ 
 }    
 
 

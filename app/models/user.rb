@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
           user.email = twitter_email
           user.image = auth.info.image
           user.password = Devise.friendly_token[0,20]
-          user.skip_confirmation! # don't require email confirmation
+          # user.skip_confirmation! # don't require email confirmation
         end
       end
     end
