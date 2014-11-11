@@ -11,17 +11,19 @@
  *= require_self
  *= require_tree .
  */
- 
+ .row {
+ 	padding: 50px;
+ }
 
-
-#sidebar {
+#q_username_cont {
 	position: absolute;
-	top: 100px;
-
+	left: 1000px;
+	top: 20px;
 }
 
+
 .well {
-	position: fixed;
+	float: right;
 }
 
 
