@@ -238,7 +238,7 @@ Devise.setup do |config|
                  :image_size => 'original',
                  :authorize_params => {
                    :force_login => 'true',
-                   :lang => 'pt'
+                   :lang => 'en'
                  }
                }
   # ==> Warden configuration

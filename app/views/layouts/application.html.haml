@@ -32,24 +32,24 @@
           %a.brand(href="#") Cheerups
           .container.nav-collapse
             %ul.nav
-             - if user_signed_in?
-               -if current_user.image? && current_user.name?
-                 = image_tag current_user.image, class: "small-avatar"
-                 %b= current_user.name
-               - else
-                 Logged in as
-                 %b= current_user.email
-               = link_to "Edit Profile", edit_user_registration_path
-               \|
-               = link_to "Logout", destroy_user_session_path, method: :delete
-             - else
-               = link_to "Sign up", new_user_registration_path
-               \|
-               = link_to "Login", new_user_session_path
-               |
-               = link_to "Sign in With Twitter", user_omniauth_authorize_path(:twitter)
-       - flash.each do |name, msg|
-         = content_tag :div, msg, :id => "flash_#{name}"
+              - if user_signed_in?
+                -if current_user.image? && current_user.username?
+                  = image_tag current_user.image, class: "small-avatar"
+                  %b= current_user.username
+                - else
+                  Logged in as
+                  %b= current_user.email
+                = link_to "Edit Profile", edit_user_registration_path
+                \|
+                = link_to "Logout", destroy_user_session_path, method: :delete
+              - else
+                = link_to "Sign up", new_user_registration_path
+                \|
+                = link_to "Login", new_user_session_path
+                |
+                = link_to "Sign in With Twitter", user_omniauth_authorize_path(:twitter)
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
     #sidebar
       .row
         .span9
