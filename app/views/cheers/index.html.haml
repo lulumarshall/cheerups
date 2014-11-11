@@ -1,8 +1,9 @@
 %section.stats
-/   = render 'shared/stats'
-/ %h1 Listing cheers
-/ = link_to 'New Cheer', new_cheer_path
-/ #cheers
-/   = render @cheers
+- if current_user
+  = render 'shared/stats'
+%h1 Listing cheers
+= link_to 'New Cheer', new_cheer_path
+#cheers
+  = render @cheers
 
-/ = will_paginate @cheers
+= will_paginate @cheers
