@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'rails', '3.2.19'
 gem 'faker', '~> 1.4.3'
 
@@ -54,6 +54,7 @@ end
 gem 'jquery-rails'
 gem 'waypoints-rails'
 gem 'will_paginate'
+
 
 
 # To use ActiveModel has_secure_password
