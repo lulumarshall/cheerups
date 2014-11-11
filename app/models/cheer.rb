@@ -6,8 +6,17 @@ class Cheer < ActiveRecord::Base
   has_many :users, through: :promotes
   default_scope -> { order('created_at DESC') }
 
-  def score
-    self.get_upvotes.size - self.get_downvotes.size
+  def cheerup_score
+    self.get_upvotes.size
   end
 
+  def cheerdown_score
+    self.get_downvotes.size
+  end
+
+  def score
+    cheerup = self.get_upvotes.size
+    cheerdown = self.get_downvotes.size
+    cheerup - cheerdown
+  end
 end
