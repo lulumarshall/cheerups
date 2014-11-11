@@ -11,6 +11,28 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	background-image: url(whitebackground.jpg);
+}
+ .col-md-3 {
+ 	position: fixed;
+ 	top: 100px;
+ 	right: 50px;
+ 	margin: 0 auto;
+}
+
+.well.sidebar-nav {
+	position:fixed;
+	right: 100px;
+	top: 100px
+}
+ 
+ .col-md-6 h1 {
+ 	font-family: 'Lobster', cursive;
+ 	margin-left: 170px;
+
+ }
  .row {
  	padding: 50px;
  }
@@ -18,7 +40,7 @@
 #q_username_cont {
 	position: absolute;
 	left: 1000px;
-	top: 20px;
+	top: 5px;
 }
 
 
