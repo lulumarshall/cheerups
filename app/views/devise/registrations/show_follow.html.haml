@@ -10,12 +10,12 @@
         = @user.cheers.count
     %section.stats
       = render 'shared/stats'
-      / - if @users.any?
-      /   .user_avatars
-      /     - @users.each do |user|
-      /       = link_to image_tag gravatar_for(user)
-  .col-md-8
-    %h3= @title
-    - if @users.any?
-      %ul.users
-        = render @users
+      - if @users.any?
+        .user_avatars
+          - @users.each do |user|
+            = link_to image_tag gravatar_for(user)
+  / .col-md-8
+  /   %h3= @title
+  /   - if @users.any?
+  /     %ul.users
+  /       = render @users

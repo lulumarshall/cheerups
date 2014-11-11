@@ -1,8 +1,10 @@
 %section.stats
-/   = render 'shared/stats'
-/ %h1 Listing cheers
-/ = link_to 'New Cheer', new_cheer_path
-/ #cheers
-/   = render @cheers
+  = render 'shared/stats'
+#header
+  %h1 Listing cheer
+  %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
+= link_to 'New Cheer', new_cheer_path
+#cheers
+  = render @cheers
 
-/ = will_paginate @cheers
+= will_paginate @cheers
