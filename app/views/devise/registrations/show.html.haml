@@ -1,4 +1,7 @@
 %section.stats
   = render 'shared/stats'
 = render 'follow_form'
-  
+
+#user_cheers
+  = render @user.cheers
+= will_paginate @user.cheers.paginate(:page => params[:page])
