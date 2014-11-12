@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :ransack
-  before_filter :twitter 
+  before_filter :twitter
   # before_filter :twitterstream
   include SessionsHelper
   include UsersHelper
@@ -13,9 +13,13 @@ class ApplicationController < ActionController::Base
 
 
   def twitter
-    username = 'iandenty'
+    username = current_user.username
     options = {:count => 10, :include_rts => true}
+    begin 
      @tweets = $client.user_timeline(username, options)
+    rescue
+      @tweets = []
+    end
     # @tweets = $client.friends(username)
     # @tweets = client.search("#ruby -rt", lang: "ja").first.text
   end
