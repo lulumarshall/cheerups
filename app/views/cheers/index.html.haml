@@ -3,7 +3,6 @@
   = render 'shared/stats'
 %h1 Listing cheers
 %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
-= link_to 'New Cheer', new_cheer_path
 #cheers
   = render @cheers
 = will_paginate @cheers
