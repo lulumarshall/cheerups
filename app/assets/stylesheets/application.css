@@ -12,11 +12,7 @@
  *= require jquery.ui.all
  *= require_tree .
  */
-.small-avatar {
-  height: 30px;
-  border-radius: 1000px;
-  margin-bottom: -8px;
-}
+
 
 .small-avatar {
   height: 30px;
@@ -36,7 +32,7 @@ body {
 
 .well.sidebar-nav {
 	position:fixed;
-	right: 100px;
+
 	top: 100px
 }
 
