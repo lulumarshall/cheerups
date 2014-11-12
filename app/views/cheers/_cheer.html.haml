@@ -1,14 +1,18 @@
 %li{:id => "cheer-#{cheer.id}"}
-
   // insert user's avatar here
-  %span.user= link_to cheer.user.username, cheer.user
-  %span.content= cheer.cheerup
-  %span.timestamp
+  
+  .button_edit
+    .image= image_tag gravatar_for(cheer.user), class: "small-avatar"
+    .user= link_to cheer.user.username, cheer.user
+    .edit= link_to 'Edit', edit_cheer_path(cheer)
+    .destroy= link_to "<span class=\"glyphicon glyphicon-remove\"></span>".html_safe, cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .content= cheer.cheerup
+  .timestamp
     Posted #{time_ago_in_words(cheer.created_at)} ago.
-  .show= link_to 'Show', cheer
-  .edit= link_to 'Edit', edit_cheer_path(cheer)
-  .destroy= link_to 'Destroy', cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }
-  = link_to "<span class=\"glyphicon glyphicon-thumbs-up\"></span>".html_safe, cheerup_cheer_path(cheer), :class => "upvote", method: :get, remote: true, "data-type" => :json
-  .score_up{:id => "score_up-#{cheer.id}"}= cheer.cheerup_score
-  = link_to "<span class=\"glyphicon glyphicon-thumbs-down\"></span>".html_safe, cheerdown_cheer_path(cheer), :class => "downvote", method: :get, remote: true, "data-type" => :json
-  .score_down{:id => "score_down-#{cheer.id}"}= cheer.cheerdown_score
+  / .show= link_to 'Show', cheer
+  .button_div
+    = link_to "<span class=\"glyphicon glyphicon-thumbs-up\"></span>".html_safe, cheerup_cheer_path(cheer), :class => "upvote", method: :get, remote: true, "data-type" => :json
+    .score_up{:id => "score_up-#{cheer.id}"}= cheer.cheerup_score
+    = link_to "<span class=\"glyphicon glyphicon-thumbs-down\"></span>".html_safe, cheerdown_cheer_path(cheer), :class => "downvote", method: :get, remote: true, "data-type" => :json
+    .score_down{:id => "score_down-#{cheer.id}"}= cheer.cheerdown_score
+

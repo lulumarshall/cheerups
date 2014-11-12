@@ -2,9 +2,10 @@
 
 %section.stats
 - if current_user
-  = render 'shared/stats'
-%h1 Listing cheers
-%input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
-#cheers
-  = render @cheers
-= will_paginate @cheers
+  / = render 'shared/stats'
+  #new-cheer-input
+    .image= image_tag gravatar_for(current_user), class: "small-avatar"
+    %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
+  #cheers
+    = render @cheers
+  = will_paginate @cheers
