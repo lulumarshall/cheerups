@@ -43,13 +43,17 @@ class CheersController < ApplicationController
   def upvote
     @cheer = Cheer.find(params[:id])
     @cheer.upvote_by current_user
-    redirect_to cheers_path
+    respond_to do |format|
+      format.json { render :json => @cheer.cheerup_score }
+    end
   end
 
   def downvote
     @cheer = Cheer.find(params[:id])
     @cheer.downvote_by current_user
-    redirect_to cheers_path
+    respond_to do |format|
+     format.json { render :json => @cheer.cheerup_score }
+    end
   end
 
   private

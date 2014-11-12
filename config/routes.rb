@@ -4,8 +4,8 @@ Cheerups::Application.routes.draw do
   resources :cheers do
     get 'page/:page', action: :index, on: :collection
     member do
-      put "cheerup", to: "cheers#upvote"
-      put "cheerdown", to: "cheers#downvote"
+      get "cheerup", to: "cheers#upvote"
+      get "cheerdown", to: "cheers#downvote"
     end
   end
 
