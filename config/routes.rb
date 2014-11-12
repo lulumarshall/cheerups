@@ -1,4 +1,6 @@
 Cheerups::Application.routes.draw do
+  resources :tweets, only: :index
+
   resources :cheers do
     get 'page/:page', action: :index, on: :collection
     member do

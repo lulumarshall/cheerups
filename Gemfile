@@ -16,7 +16,7 @@ gem "rails_12factor", group: :production
 gem 'omniauth-twitter'
 gem 'rails4-autocomplete', '~> 1.1.1'
 gem 'jquery-ui-rails'
-
+gem 'twitter'
 group :assets do
   gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

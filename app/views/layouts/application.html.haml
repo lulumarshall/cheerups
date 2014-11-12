@@ -58,14 +58,12 @@
       .col-md-3
     
         = bootstrap_flash if bootstrap_flash.present?
-          
+
         .well.sidebar-nav
           %h3 Sidebar
           %ul.nav.nav-list
             %li.nav-header Sidebar
-            %li= link_to "Trending", "/path1"
-            %li= link_to "Trending", "/path2"
-            %li= link_to "Trending", "/path3"
+            %li= render 'tweets/tweets'
 
     %footer
       %p &copy; Cheers 2014
