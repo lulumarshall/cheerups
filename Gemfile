@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'rails', '3.2.19'
 gem 'faker', '~> 1.4.3'
-
+gem 'font-awesome-sass'
+gem 'link_with_icon'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'bootstrap-rails-engine'
