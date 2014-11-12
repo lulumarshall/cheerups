@@ -9,3 +9,4 @@ def ransack
 	@users = @q.result(distinct: true)
 	end
 end
+

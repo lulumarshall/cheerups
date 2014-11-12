@@ -18,6 +18,19 @@ class User < ActiveRecord::Base
 
   
   # Follows a user.
+
+      def user_name=(name)
+      user = User.find_by_name(name)
+      if user
+        self.user_id = user.id
+      else
+        errors[:user_name] << "Invalid name entered"
+      end
+    end
+
+def user_name
+  User.find(user_id).name if user_id
+end
     def follow(other_user)
       active_relationships.create(followed_id: other_user.id)
     end
@@ -50,7 +63,7 @@ class User < ActiveRecord::Base
           user.email = twitter_email
           user.image = auth.info.image
           user.password = Devise.friendly_token[0,20]
-          user.skip_confirmation! # don't require email confirmation
+          # user.skip_confirmation! # don't require email confirmation
         end
       end
     end

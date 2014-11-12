@@ -11,3 +11,4 @@ jQuery ->
         $('.pagination').text('Fetching more CheerUps!...')
         $.getScript((url+ ".js"))
     $(window).scroll()
+

@@ -14,6 +14,8 @@ gem 'cancancan', '~> 1.9'
 gem 'ransack'
 gem "rails_12factor", group: :production
 gem 'omniauth-twitter'
+gem 'rails4-autocomplete', '~> 1.1.1'
+gem 'jquery-ui-rails'
 
 group :assets do
   gem "therubyracer"
