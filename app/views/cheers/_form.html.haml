@@ -10,3 +10,5 @@
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), cheers_path, :class => 'btn'
+
+    = f.text_field :category_name, data: {autocomplete_source: Category.order(:name).map(&:name)} %>

@@ -1,0 +1,26 @@
+form {
+	position: relative;
+	left: 170px;
+}
+
+
+/*.new_user a {
+	position: relative;
+	left: 50px;
+}*/
+
+.btn-default {
+	position: relative;
+	left: 200px;
+}
+
+.checkbox {
+	position: relative;
+	left: 200px;
+	bottom: 13px;
+}
+
+.form-inline {
+	top: 50px;
+	left:70px;
+}

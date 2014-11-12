@@ -25,7 +25,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="#") Cheerups
+          %a.brand(href="cheers#index") Cheerups
           .container
             .nav
             = search_form_for @q do |f|
@@ -40,32 +40,31 @@
                   Logged in as
                   %b= current_user.email
                 = link_to "Edit Profile", edit_user_registration_path
-                \|
+                |
                 = link_to "Logout", destroy_user_session_path, method: :delete
               - else
-                = link_to "Sign up", new_user_registration_path
-                \|
-                = link_to "Login", new_user_session_path
+                |
+                = link_to "Login|Sign-up", new_user_session_path
                 |
                 = link_to "Sign in With Twitter", user_omniauth_authorize_path(:twitter)
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
     .row
       .col-md-3
-        
+        Friends
       .col-md-6
         = yield
       .col-md-3
     
         = bootstrap_flash if bootstrap_flash.present?
           
-      .well.sidebar-nav
-        %h3 Sidebar
-        %ul.nav.nav-list
-          %li.nav-header Sidebar
-          %li= link_to "Trending", "/path1"
-          %li= link_to "Trending", "/path2"
-          %li= link_to "Trending", "/path3"
+        .well.sidebar-nav
+          %h3 Sidebar
+          %ul.nav.nav-list
+            %li.nav-header Sidebar
+            %li= link_to "Trending", "/path1"
+            %li= link_to "Trending", "/path2"
+            %li= link_to "Trending", "/path3"
 
     %footer
       %p &copy; Cheers 2014

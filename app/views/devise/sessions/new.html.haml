@@ -1,18 +1,50 @@
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    
-
-    %br/
-    = f.email_field :email, autofocus: true, :placeholder => "Email"
-  .field
-    
-    %br/
-    = f.password_field :password, autocomplete: "off", :placeholder => "Password"
+= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-inline"}) do |f|
+     
+  / %form.form-inline{:role => "form"}
+  .form-group
+    %label.sr-only
+  = f.email_field :email, autofocus: true, :placeholder => "Email"
+  .form-group
+  = f.password_field :password, autocomplete: "off", :placeholder => "Password"
   - if devise_mapping.rememberable?
-    .field
+    .checkbox
       = f.check_box :remember_me
       = f.label :remember_me
   .actions
-    = f.submit "Log in"
+  = f.submit "Log in"
+  = render "devise/shared/links"
+%h2 Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  
+  .field
+    = f.label :username
+    %br/
+    = f.text_field :username, autofocus: true
+  .field
+    = f.label :description
+    %br/
+    = f.text_area :description
+  .field
+    =f.label :image
+    %br/
+    =f.text_field :image
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email
+  .field
+    = f.label :password
+    - if @validatable
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "off"
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "off"
+  .actions
+    = f.submit "Sign up"
 = render "devise/shared/links"
