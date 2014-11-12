@@ -18,7 +18,11 @@
   margin-bottom: -8px;
 }
 
-.
+.small-avatar {
+  height: 30px;
+  border-radius: 1000px;
+  margin-bottom: -8px;
+}
 
 body {
 	background-image: url(whitebackground.jpg);
