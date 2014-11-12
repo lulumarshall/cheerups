@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
 
   def twitter
-    username = 'lulumarshall'
+    username = current_user.twittername
     options = {:count => 10, :include_rts => true}
     begin 
      @tweets = $client.user_timeline(username, options)
