@@ -12,4 +12,4 @@
   - if @users.any?
     .user_avatars
       - @users.each do |user|
-        =link_to (image_tag gravatar_for(user)), user_path(user)
+        =link_to (image_tag gravatar_for(user)), following_user_path(user)
