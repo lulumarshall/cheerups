@@ -6,8 +6,12 @@ class CheersController < ApplicationController
   respond_to :html, :json, :js
   
   def index
-    @cheers = Cheer.order(:created_at).page(params[:page]).per_page(10)    # @cheers = Cheer.all
-    respond_with(@cheers)
+    if current_user
+      @cheers = Cheer.order(:created_at).page(params[:page]).per_page(10)    # @cheers = Cheer.all
+      respond_with(@cheers)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def show
