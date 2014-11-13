@@ -2,9 +2,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :ransack
   before_filter :twitter
+  before_filter :all_users
   # before_filter :twitterstream
   include SessionsHelper
   include UsersHelper
+
+  def all_users
+
+    @users = User.all
+    @user  = current_user
+  end
 
   def ransack
 	 @q = User.search(params[:q])
@@ -13,11 +20,12 @@ class ApplicationController < ActionController::Base
 
 
   def twitter
+
     # unless current_user
       begin
-       username = current_user.username
+       username = current_user.twittername
       rescue
-        username = nil
+        twittername = nil
       end
 
       options = {:count => 10, :include_rts => true}

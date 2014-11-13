@@ -52,7 +52,11 @@
           = content_tag :div, msg, :id => "flash_#{name}"
     .row
       .col-md-3
-        
+
+        -if current_user
+          %section.stats
+            = render 'shared/profile'
+
       .col-md-6#cheer_feed
         = yield
       .col-md-3

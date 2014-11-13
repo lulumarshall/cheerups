@@ -35,6 +35,10 @@
     %br/
     = f.email_field :email
   .field
+    = f.label :twittername
+    %br/
+    = f.text_field :twittername
+  .field
     = f.label :password
     - if @validatable
       %em
