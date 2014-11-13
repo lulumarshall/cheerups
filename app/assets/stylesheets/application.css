@@ -29,16 +29,12 @@ body {
 }
  .col-md-3 {
  	position: fixed;
- 	top: 100px;
- 	right: 50px;
+ 	top: 50px;
+/* 	right: 50px;*/
  	margin: 0 auto;
 }
 
-.well.sidebar-nav {
-	position:fixed;
 
-	top: 100px
-}
 
 ul.ui-autocomplete {
   position: absolute;
