@@ -13,13 +13,20 @@ class ApplicationController < ActionController::Base
 
 
   def twitter
-    username = 'lulumarshall'
-    options = {:count => 10, :include_rts => true}
-    begin 
-     @tweets = $client.user_timeline(username, options)
-    rescue
-      @tweets = []
-    end
+    # unless current_user
+      begin
+       username = current_user.username
+      rescue
+        username = nil
+      end
+
+      options = {:count => 10, :include_rts => true}
+      begin 
+        @tweets = $client.user_timeline(username, options)
+      rescue
+        @tweets = []
+      end
+    # end
     # @tweets = $client.friends(username)
     # @tweets = client.search("#ruby -rt", lang: "ja").first.text
   end
