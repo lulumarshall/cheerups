@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
 
     # unless current_user
       begin
-       username = current_user.username
+       username = current_user.twittername
       rescue
-        username = nil
+        twittername = nil
       end
 
       options = {:count => 10, :include_rts => true}
