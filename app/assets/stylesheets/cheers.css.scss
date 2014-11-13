@@ -55,11 +55,18 @@ li:hover {
   background-color: rgba(245, 248, 250, 1.0);
 }
 
+.medium-avatar {
+  height: 48px;
+  width: 48px;
+  border-radius: 1000px;
+  // margin-bottom: -8px;
+}
+
 .button_edit {
   display: inline-block;
   width: 100%;
   .user_section{
-    width: 87%;
+    width: 95%;
     display: inline-block;
     .image {
       display: inline-block;
@@ -124,3 +131,6 @@ li:hover {
 }
 }
 
+.nav #nave_bar_main {
+
+}
