@@ -4,6 +4,7 @@ gem 'rails', '3.2.19'
 gem 'faker', '~> 1.4.3'
 gem 'font-awesome-sass'
 gem 'link_with_icon'
+gem "auto_html"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'bootstrap-rails-engine'

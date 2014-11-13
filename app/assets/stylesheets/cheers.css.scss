@@ -1,7 +1,9 @@
 // Place all the styles related to the Cheers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+body {
+  background-color: rgba(225, 232, 237, 1.0);
+}
 
 td {
 white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
@@ -22,7 +24,103 @@ white-space: normal;
 }
 
 .col-md-6 {
+  background-color: rgba(229, 242, 247, 1.0);
 	position: relative;
 	top: 50px;
-	border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888; 
+  border: 2px solid rgba(245, 248, 250, 1.0);
+  border-radius: 10px;
 }
+
+#cheer_feed {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+li {
+  background-color: white;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  list-style-type: none;
+  border-top: 1px solid rgba(225, 232, 237, 1.0);
+  border-bottom: 1px solid rgba(225, 232, 237, 1.0);
+  .timestamp{
+    color: rgba(153, 153, 153, 1.0);
+  }
+}
+
+li:hover {
+  background-color: rgba(245, 248, 250, 1.0);
+}
+
+.button_edit {
+  display: inline-block;
+  width: 100%;
+  .user_section{
+    width: 87%;
+    display: inline-block;
+    .image {
+      display: inline-block;
+      border-radius: 5px;
+  } .user {
+    display: inline-block;
+    }
+  }
+  .edit_section {
+    display: inline-block;
+    .edit {
+      // margin-left: 260px;
+      display: inline-block;
+      } a {
+        color: rgba(153, 153, 153, 1.0);
+      } .destroy {
+        display: inline-block;
+      } .glyphicon-remove {
+          color: rgba(195, 85, 91, 1.0)
+      }
+    }
+  }
+
+.button_div {
+  display: inline-block;
+} .score_up {
+  display: inline-block;
+} .score_down {
+  display: inline-block;
+} 
+
+#new-cheer-input {
+  width: 100%;
+  display: inline-block;
+  padding-left: 5%;
+  padding-right: 5%;
+  .image{
+    display: inline-block;
+    width: 5%;
+    margin-right: 0;
+  }
+  input#new-cheer{
+    display: inline-block;
+    width: 93%;
+    color: rgba(0, 132, 180, 1.0);
+    border-color: rgba(192, 225, 237, 1.0);
+  } ::-webkit-input-placeholder {
+    color:rgba(0, 132, 180, 1.0);
+    font-weight: bold;
+}
+:-moz-placeholder {
+    color:rgba(0, 132, 180, 1.0);
+    font-weight: bold;
+}
+::-moz-placeholder {
+    color:rgba(0, 132, 180, 1.0);
+    font-weight: bold;
+}
+:-ms-input-placeholder {
+    color:rgba(0, 132, 180, 1.0);
+    font-weight: bold;
+}
+}
+
