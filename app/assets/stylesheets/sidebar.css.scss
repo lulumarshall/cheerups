@@ -1,0 +1,35 @@
+.col-md-3 {
+  top: 50;
+}
+
+.well.sidebar-nav {
+  // position:fixed;
+  background-color: rgba(229, 242, 247, 1.0);
+  width: 178.182;
+  padding-left: 0;
+  padding-right: 0;
+  top: 100px;
+  box-shadow: 5px 5px 5px #888888; 
+  border: 2px solid rgba(245, 248, 250, 1.0);
+  border-radius: 10px;
+}
+
+#twitter-widget-0{
+  width: 220px;
+}
+
+ul.nav.nav-list {
+  width: 100%;
+}
+
+.large-avatar {
+  background-color: rgba(7, 117, 187, 1.0);
+  height: 96px;
+  width: 96px;
+  border-radius: 50%;
+  border: solid 7px rgba(229, 242, 247, 1.0)
+}
+
+.stats#friends-stats {
+  width: 100%;
+}
