@@ -13,9 +13,16 @@
       - if @users.any?
         .user_avatars
           - @users.each do |user|
-            = link_to image_tag gravatar_for(user)
+            =image_tag gravatar_for(user)
+            = link_to user.username, following_user_path(user)
   / .col-md-8
   /   %h3= @title
   /   - if @users.any?
   /     %ul.users
   /       = render @users
+%section.stats
+  = render 'shared/stats'
+= render 'follow_form'
+#user_cheers
+  = render @user.cheers
+= will_paginate @user.cheers.paginate(:page => params[:page])
