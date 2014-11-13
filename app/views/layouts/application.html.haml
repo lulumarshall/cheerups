@@ -25,7 +25,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href="cheers#index") Cheerups
+          %a.brand= link_to 'Cheerups!', cheers_path
           .container
             .nav
             = search_form_for @q do |f|
@@ -35,11 +35,11 @@
               - if user_signed_in?
                 -if current_user.image? && current_user.username?
                   = image_tag gravatar_for(current_user), class: "small-avatar"
-                  %b= current_user.username
+                  %b= link_to current_user.username, following_user_path(@user)
                 - else
                   = image_tag gravatar_for(current_user), class: "small-avatar"
                   Logged in as
-                  %b= current_user.email
+                  %b= link_to current_user.email, following_user_path(@user)
                 = link_to "Edit Profile", edit_user_registration_path
                 |
                 = link_to "Logout", destroy_user_session_path, method: :delete
