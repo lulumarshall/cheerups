@@ -43,19 +43,6 @@ function deleteCheer(event){
   })
 }
 
-// railsAjax.deleteTask = function(){
-//   $this = $(this);
-//   var taskId = $this.data('id')
-//       // console.log('delete post')
-//       $.ajax({
-//         url: '/tasks/' + taskId,
-//         type: 'DELETE',
-//         dataType: 'json'
-//       }).success(function(data){
-//         console.log(data, 'the ajax call was successful');
-//         $this.closest('li').remove();
-//       });
-
 
 $(document).ready(function(){
   console.log('dom loaded')

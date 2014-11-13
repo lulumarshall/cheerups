@@ -3,6 +3,7 @@
 %section.stats
 - if current_user
   / = render 'shared/stats'
+  %h2 Cheer feed
   #new-cheer-input
     .image= image_tag gravatar_for(current_user), class: "small-avatar"
     %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
