@@ -25,7 +25,8 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand= link_to 'Cheerups!', cheers_path
+          .brand
+            %a= link_to 'Cheerups!', cheers_path
           .container
             .nav
             = search_form_for @q do |f|
@@ -41,12 +42,10 @@
                   Logged in as
                   %b= link_to current_user.email, following_user_path(current_user)
                 = link_to "Edit Profile", edit_user_registration_path
-                |
+                
                 = link_to "Logout", destroy_user_session_path, method: :delete
               - else
-                |
-                = link_to "Login|Sign-up", new_user_session_path
-                |
+                
                 = link_to "Sign in With Twitter", user_omniauth_authorize_path(:twitter)
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
