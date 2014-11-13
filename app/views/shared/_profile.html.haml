@@ -1,19 +1,15 @@
 - provide(:title, @title)
-.row
-  %aside.col-md-4
-    %section.user_info
-      = image_tag gravatar_for @user
-      %h1= link_to @user.username
-      %h2= @user.description
-      / = render 'follow_form'
-      %span
-        %b Cheers:
-        = @user.cheers.count
-    %section.stats
-      = render 'shared/stats'
-      - if @users.any?
-        .user_avatars
-          - @users.each do |user|
-            =image_tag gravatar_for(user)
-            = link_to user.username, user_path(user)
-
+.user_info
+  = image_tag gravatar_for(@user), class: "large-avatar"
+  %h6.username_main= link_to @user.username
+  %p.description= @user.description
+  = render 'follow_form'
+  %span
+    %b Cheers:
+    = @user.cheers.count
+.stats
+  = render 'shared/stats'
+  - if @users.any?
+    .user_avatars
+      - @users.each do |user|
+        =link_to (image_tag gravatar_for(user)), user_path(user)
