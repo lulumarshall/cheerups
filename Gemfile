@@ -7,6 +7,7 @@ gem 'link_with_icon'
 gem "auto_html"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'carrierwave', '0.9.0'
 gem 'bootstrap-rails-engine'
 gem 'pg'
 gem 'devise'

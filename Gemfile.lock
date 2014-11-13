@@ -59,6 +59,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -287,6 +291,7 @@ DEPENDENCIES
   bourbon
   cancancan (~> 1.9)
   capybara
+  carrierwave (= 0.9.0)
   coffee-rails (~> 3.2.1)
   database_cleaner
   devise
