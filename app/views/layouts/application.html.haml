@@ -55,7 +55,10 @@
 
         -if current_user
           %section.stats
-            = render 'shared/profile'
+            - if params[:controller] == "cheers" && params[:action] == "index"
+              = render 'shared/profilenobutton'
+            -else
+              = render 'shared/profile'
         -else
           =render "devise/shared/new_login"
 
