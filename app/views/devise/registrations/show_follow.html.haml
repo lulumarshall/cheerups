@@ -25,4 +25,8 @@
 = render 'follow_form'
 #user_cheers
   = render @user.cheers
+
+= image_tag @user.background_image.url 
+
 = will_paginate @user.cheers.paginate(:page => params[:page])
+

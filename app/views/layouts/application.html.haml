@@ -16,7 +16,7 @@
     = javascript_include_tag "application"
 
 
-  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top"}
+  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top", :style =>"background: url(#{current_user.background_image rescue nil});  background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"}
     %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
       .container.fluid
       .col-xs-4.col-sm-4.col-md-4
@@ -65,6 +65,5 @@
               %li.nav-header Sidebar
               - if current_user 
                 %li= render 'tweets/tweets'
-
     %footer
       %p &copy; Cheers 2014
