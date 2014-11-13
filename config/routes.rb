@@ -1,6 +1,5 @@
 Cheerups::Application.routes.draw do
-  resources :tweets, only: :index
-
+ 
   resources :cheers do
     get 'page/:page', action: :index, on: :collection
     member do
@@ -17,7 +16,7 @@ Cheerups::Application.routes.draw do
 
 
 
-  devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }, :controllers => {registrations: 'users',  omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, :controllers => {registrations: 'users',  omniauth_callbacks: "omniauth_callbacks" }
 
   devise_scope :user do
     get "sign_in", :to => "devise/sessions#new" 

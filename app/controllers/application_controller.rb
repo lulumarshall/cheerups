@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :ransack
-  before_filter :twitter
+  before_filter :twitterfeed
   before_filter :all_users
   # before_filter :twitterstream
   include SessionsHelper
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 	end
 
 
-  def twitter
+  def twitterfeed
 
     # unless current_user
       begin
