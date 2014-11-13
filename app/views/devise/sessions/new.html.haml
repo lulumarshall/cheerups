@@ -1,43 +1,23 @@
 #sign_up_text
   %h4 The world is a depressing place, we're all staring at our shoes.
-  %h5 Welcome to CheerUps! - happy little quips to brighten your's and other peoples' days.
-  %h5 CheerUps are 141 characters messages, which users are able to promote Cheerups, boosting the reputation of the Cheerupper.
+  %h4 Welcome to CheerUps! - happy little quips to brighten up the world.
+  %p CheerUps are 141 characters messages, which users are able to promote Cheerups, boosting the reputation of the Cheerupper.
 
 #sign_up_container
   %h2 Sign up
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), id: "signup_form") do |f|
     = devise_error_messages!
-    .field
-      = f.label :username
-      %br/
-      = f.text_field :username, autofocus: true
-    .field
-      = f.label :description
-      %br/
-      = f.text_area :description
-    .field
-      =f.label :image
-      %br/
-      =f.text_field :image
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email
-    .field
-      = f.label :twittername
-      %br/
-      = f.text_field :twittername
-    .field
-      = f.label :password
+    #line_one
+      = f.text_field :username, autofocus: true, :placeholder => "Username"
+      = f.email_field :email, :placeholder => "Email"
+    #line_two
+      = f.text_area :description, :placeholder => "Description"
+    #line_four
       - if @validatable
         %em
           (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "off"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "off"
+      = f.password_field :password, autocomplete: "off", :placeholder => "Password"
+      = f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Confirm password"
     .actions
       = f.submit "Sign up"
-  = render "devise/shared/links"
+  / = render "devise/shared/links"
