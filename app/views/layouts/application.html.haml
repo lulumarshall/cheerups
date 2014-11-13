@@ -66,7 +66,9 @@
             %ul.nav.nav-list
               %li.nav-header Sidebar
               - if current_user 
-                %li= render 'tweets/tweets'
+                %a.twitter-timeline{"data-widget-id" => "532864296850427906", :href => "https://twitter.com/hashtag/happy"} #happy Tweets
+                :javascript
+                  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
     %footer
       %p &copy; Cheers 2014
