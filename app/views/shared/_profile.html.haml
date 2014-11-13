@@ -3,8 +3,9 @@
   %aside.col-md-4
     %section.user_info
       = image_tag gravatar_for @user
-      %h1= @user.username
-      %span= link_to "view my profile", @user
+      %h1= link_to @user.username
+      %h2= @user.description
+      = render 'follow_form'
       %span
         %b Cheers:
         = @user.cheers.count
@@ -14,5 +15,5 @@
         .user_avatars
           - @users.each do |user|
             =image_tag gravatar_for(user)
-            = link_to user.username, following_user_path(user)
+            = link_to user.username, user_path(user)
 

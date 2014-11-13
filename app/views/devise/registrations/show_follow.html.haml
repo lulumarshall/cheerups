@@ -1,3 +1,7 @@
+%h2 Your Cheer Feed
+#new-cheer-input
+  .image= image_tag gravatar_for(current_user), class: "small-avatar"
+  %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
 #user_cheers
   = render @user.cheers
 
