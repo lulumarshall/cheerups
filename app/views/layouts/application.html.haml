@@ -56,6 +56,8 @@
         -if current_user
           %section.stats
             = render 'shared/profile'
+        -else
+          =render "devise/shared/new_login"
 
       .col-md-6#cheer_feed
         = yield
