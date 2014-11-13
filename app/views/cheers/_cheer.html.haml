@@ -7,7 +7,8 @@
       .user= link_to cheer.user.username, cheer.user
     .edit_section  
       .edit= link_to 'Edit', edit_cheer_path(cheer)
-      .destroy= link_to "<span class=\"glyphicon glyphicon-remove\"></span>".html_safe, cheer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      .destroy{"data-id" =>cheer.id}
+        = link_to "<span class=\"glyphicon glyphicon-remove\"></span>".html_safe, cheer
   .content= cheer.cheerup
   .timestamp
     Posted #{time_ago_in_words(cheer.created_at)} ago.
