@@ -2,9 +2,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :ransack
   before_filter :twitter
+  before_filter :all_users
   # before_filter :twitterstream
   include SessionsHelper
   include UsersHelper
+
+  def all_users
+
+    @users = User.all
+    @user  = current_user
+  end
 
   def ransack
 	 @q = User.search(params[:q])

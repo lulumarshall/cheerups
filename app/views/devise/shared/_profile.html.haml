@@ -1,0 +1,18 @@
+- provide(:title, @title)
+.row
+  %aside.col-md-4
+    %section.user_info
+      = image_tag gravatar_for @user
+      %h1= @user.username
+      %span= link_to "view my profile", @user
+      %span
+        %b Cheers:
+        = @user.cheers.count
+    %section.stats
+      = render 'shared/stats'
+      - if @users.any?
+        .user_avatars
+          - @users.each do |user|
+            =image_tag gravatar_for(user)
+            = link_to user.username, following_user_path(user)
+
