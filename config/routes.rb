@@ -14,6 +14,8 @@ Cheerups::Application.routes.draw do
 
   match '/ajax/users', to: 'autocomplete#users', as: :ajax
 
+  
+
 
 
   devise_for :users, :controllers => {registrations: 'users',  omniauth_callbacks: "omniauth_callbacks" }

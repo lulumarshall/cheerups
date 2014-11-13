@@ -12,6 +12,10 @@
  *= require jquery.ui.all
  *= require_tree .
  */
+.row {
+   background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
 
 .small-avatar {

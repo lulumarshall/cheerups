@@ -16,8 +16,8 @@
     = javascript_include_tag "application"
 
 
-  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top"}
-    %nav.navbar.navbar-default.navbar-fixed-top#nav_bar_main{:role => "navigation"}
+  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top", :style =>"background: url(#{current_user.background_image rescue nil});  background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"}
+    %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
       .container.fluid
       .col-xs-4.col-sm-4.col-md-4
         .navbar-header.page-scroll
@@ -70,9 +70,13 @@
             %ul.nav.nav-list
               %li.nav-header Sidebar
               - if current_user 
+<<<<<<< HEAD
                 %a.twitter-timeline{"data-widget-id" => "532864296850427906", :href => "https://twitter.com/hashtag/happy"} #happy Tweets
                 :javascript
                   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
+=======
+                %li= render 'tweets/tweets'
+>>>>>>> carrierwave
     %footer
       %p &copy; Cheers 2014
