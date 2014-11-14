@@ -5,5 +5,5 @@
     %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
   -else 
     %h4= @user.username
-  #user_cheers
-    = render @user.cheers
+#cheers
+  = render @user.cheers

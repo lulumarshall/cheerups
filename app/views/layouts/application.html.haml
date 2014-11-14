@@ -29,10 +29,11 @@
             %a= link_to 'Cheerups!', cheers_path
           .container
             .nav
-            = search_form_for @q do |f|
-              %p
-                = f.text_field :username_cont, :placeholder => "Find User.."
-              %p
+            -if current_user
+              = search_form_for @q do |f|
+                %p
+                  = f.text_field :username_cont, :placeholder => "Find User.."
+                %p
               - if user_signed_in?
                 -if current_user.image? && current_user.username?
                   = image_tag gravatar_for(current_user), class: "small-avatar"
@@ -53,7 +54,7 @@
       .col-md-3#col-md-3-1
         -if current_user
           .stats#friends-stats
-            - if params[:controller] == "users" && params[:action] == "show" || params[:controller] == "cheers" && params[:action] == "index"
+            - if params[:controller] == "users" && params[:action] == "show" || params[:controller] == "cheers" && params[:action] == "index"|| params[:controller] == "users" && params[:action] == "edit"
               = render 'shared/profilenobutton'
             -else
               = render 'shared/profile'

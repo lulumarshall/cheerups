@@ -6,8 +6,7 @@
     %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
   -else 
     %h4= @user.username
-#user_cheers
+#cheers
   = render @user.cheers
 
-= image_tag @user.background_image.url, id: "tester"
 

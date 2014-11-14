@@ -10,7 +10,7 @@
       = f.text_area :description, :placeholder => "Description"
     #line_three
       = f.file_field :background_image 
-      = f.password_field :current_password, autocomplete: "off"
+      = f.password_field :current_password, autocomplete: "off", :placeholder => "Current Password"
     #line_four
       - if @validatable
         %em
