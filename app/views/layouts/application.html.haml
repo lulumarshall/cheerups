@@ -36,11 +36,11 @@
               - if user_signed_in?
                 -if current_user.image? && current_user.username?
                   = image_tag gravatar_for(current_user), class: "small-avatar"
-                  %b= link_to current_user.username, following_user_path(current_user)
+                  %b= link_to current_user.username, user_path(current_user)
                 - else
                   = image_tag gravatar_for(current_user), class: "small-avatar"
                   Logged in as
-                  %b= link_to current_user.email, following_user_path(current_user)
+                  %b= link_to current_user.email, user(current_user)
                 = link_to "Edit Profile", edit_user_registration_path
                 
                 = link_to "Logout", destroy_user_session_path, method: :delete
@@ -53,7 +53,7 @@
       .col-md-3#col-md-3-1
         -if current_user
           .stats#friends-stats
-            - if params[:controller] == "cheers" && params[:action] == "index"
+            - if params[:controller] == "users" && params[:action] == "show"
               = render 'shared/profilenobutton'
             -else
               = render 'shared/profile'

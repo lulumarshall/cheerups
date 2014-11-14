@@ -1,7 +1,9 @@
-/ %section.stats
-/   = render 'shared/stats'
-/ = render 'follow_form'
-%h4= @user.username
+- if @user == current_user
+  %h2 Your Cheer Feed
+  .image= image_tag gravatar_for(current_user), class: "small-avatar"
+  %input#new-cheer{:placeholder => "What's your cheer today?", :type => "text"}/
+-else 
+  %h4= @user.username
 #user_cheers
   = render @user.cheers
 = will_paginate @user.cheers.paginate(:page => params[:page])

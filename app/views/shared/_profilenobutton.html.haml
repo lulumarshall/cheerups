@@ -3,6 +3,7 @@
   = image_tag gravatar_for(@user), class: "large-avatar"
   %h6.username_main= link_to @user.username
   %p.description= @user.description
+  = render 'follow_form'
   %span
     %b Cheers:
     = @user.cheers.count

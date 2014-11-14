@@ -14,5 +14,5 @@
         .user_avatars
           - @users.each do |user|
             =image_tag gravatar_for(user)
-            = link_to user.username, following_user_path(user)
+            = link_to user.username, user_path(user)
 
