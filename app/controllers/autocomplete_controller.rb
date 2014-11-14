@@ -7,7 +7,8 @@ class AutocompleteController < ApplicationController
       users = User.all
     end
     list = users.map {|u| Hash[ id: u.id, label: u.username, name: u.username]}
-
+    puts list
+    puts 'hi Ben'
     render json: list
   end
 end
