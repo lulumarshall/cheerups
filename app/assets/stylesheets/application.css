@@ -45,6 +45,10 @@
   border-radius: 1000px;
   margin-bottom: -8px;
 }
+.user_avatars a{
+  display:inline-block;
+  width:48px;
+}
 
 body {
   background-image: url(whitebackground.jpg);

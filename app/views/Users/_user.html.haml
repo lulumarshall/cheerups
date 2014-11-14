@@ -1,5 +1,3 @@
 %li
-  = image_tag gravatar_for(user)
+  = image_tag gravatar_for(user), class: "small-avatar"
   = link_to user.username, following_user_path(user)
-
- 
