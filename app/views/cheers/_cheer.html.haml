@@ -4,7 +4,7 @@
   .button_edit
     .user_section
       .image= image_tag gravatar_for(cheer.user), class: "small-avatar"
-      .user= link_to cheer.user.username, following_user_path(@user)
+      .user= link_to cheer.user.username, user_path(cheer.user)
     .edit_section  
       / .edit= link_to 'Edit', edit_cheer_path(cheer)
       .destroy{"data-id" =>cheer.id}
