@@ -53,7 +53,7 @@
       .col-md-3#col-md-3-1
         -if current_user
           .stats#friends-stats
-            - if params[:controller] == "users" && params[:action] == "show"
+            - if params[:controller] == "users" && params[:action] == "show" || params[:controller] == "cheers" && params[:action] == "index"
               = render 'shared/profilenobutton'
             -else
               = render 'shared/profile'
