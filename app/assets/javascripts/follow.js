@@ -1,4 +1,3 @@
-
 // updatefollow = function(event){
 //   //console.log('clicked')
 //   event.preventDefault();
