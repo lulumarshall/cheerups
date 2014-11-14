@@ -27,7 +27,9 @@ ul.nav.nav-list {
   height: 96px;
   width: 96px;
   border-radius: 50%;
-  border: solid 7px rgba(229, 242, 247, 1.0)
+  border: solid 7px rgba(229, 242, 247, 1.0);
+  position: relative;
+  z-index: 2;
 }
 
 .stats#friends-stats {
