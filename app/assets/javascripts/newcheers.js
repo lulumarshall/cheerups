@@ -7,24 +7,11 @@ function request(method, url, data){
   })
 }
 
-//add to the Cheer list 
-//function appendNewCheer(data){
-  
-  //$('<li id="cheer-'+ data.id + '">' + '<span class="user"><a href="/users/'+ data.user_id + '"></a></span><span class="content">'+ data.cheerup +'</span><span class="timestamp"></span><div class="edit"><a href="/cheers/'+ data.id +'/edit">Edit</a></div><div class="destroy"><a href="/cheers/'+ data.id + '" data-confirm="Are you sure?" data-method="delete" rel="nofollow">x</a></div><span class="/cheers/'+ data.id +'/cheerup" data-method="put" rel="nofollow">cheerUp!</a></span><span class="score">0</span></li>').prependTo("#cheers") 
- 
-  
-
-//POST Cheer 
 function createCheer(){
   request("POST", "/cheers", {
     cheer:{
       cheerup: $("#new-cheer").val()
-
     }
-  }).success(function(data){
-    // console.log(data);
-    // $('#new-cheer').val( )
-    // appendNewCheer(data)
   })
 }
 

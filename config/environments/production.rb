@@ -10,10 +10,7 @@ config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"
 
 config.action_mailer.smtp_settings = {
-  :address   => "smtp.mandrillapp.com",
-  :port      => 25,
-  :user_name => ENV["ben@sunderland.eu.com"],
-  :password  => ENV["UhC89PjvNP4pezYr0cLCbg"]
+
 }
 
   # Code is not reloaded between requests

@@ -10,13 +10,7 @@
       = f.text_area :description, :placeholder => "Description"
     #line_three
       = f.file_field :background_image 
-      = f.password_field :current_password, autocomplete: "off", :placeholder => "Current Password"
-    #line_four
-      - if @validatable
-        %em
-          (#{@minimum_password_length} characters minimum)
-      = f.password_field :password, autocomplete: "off", :placeholder => "Password"
-      = f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Confirm password"
+
     .actions
       = f.submit "Update"
   %h3 Cancel my account

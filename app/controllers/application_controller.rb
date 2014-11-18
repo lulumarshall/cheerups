@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   before_filter :ransack
   before_filter :twitterfeed
   before_filter :all_users
-  # before_filter :twitterstream
   include SessionsHelper
   include UsersHelper
 
@@ -20,28 +19,18 @@ class ApplicationController < ActionController::Base
 
 
   def twitterfeed
+    begin
+     username = current_user.twittername
+    rescue
+      twittername = nil
+    end
 
-    # unless current_user
-      begin
-       username = current_user.twittername
-      rescue
-        twittername = nil
-      end
-
-      options = {:count => 10, :include_rts => true}
-      begin 
-        @tweets = $client.user_timeline(username, options)
-      rescue
-        @tweets = []
-      end
-    # end
-    # @tweets = $client.friends(username)
-    # @tweets = client.search("#ruby -rt", lang: "ja").first.text
+    options = {:count => 10, :include_rts => true}
+    begin 
+      @tweets = $client.user_timeline(username, options)
+    rescue
+      @tweets = []
+    end
   end
-
-  # def twitterstream
-  #   topics = ["coffee", "tea"]
-  #   @tweetstream = $clients.filter(track: topics.join(",")) 
-  # end
 end
 

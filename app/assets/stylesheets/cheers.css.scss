@@ -1,6 +1,4 @@
-// Place all the styles related to the Cheers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
 body {
   background-color: rgba(225, 232, 237, 1.0);
 }
@@ -16,12 +14,6 @@ word-break: break-all;
 white-space: normal;
 
 }
-
-// .alert {
-// 	position: absolute;
-// 	top: 30px;
-// 	left: 150px;
-// }
 
 .col-md-6 {
   background-color: rgba(229, 242, 247, 1.0);
@@ -130,8 +122,4 @@ li:hover {
     color:rgba(0, 132, 180, 1.0);
     font-weight: bold;
 }
-}
-
-.nav #nave_bar_main {
-
 }
