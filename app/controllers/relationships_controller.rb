@@ -12,6 +12,6 @@ class RelationshipsController < ApplicationController
     def destroy
       user = Relationship.find(params[:id]).followed
       current_user.unfollow(user)
-      redirect_to user
+      render nothing: true, status: 204
     end
 end

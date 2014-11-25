@@ -1,6 +1,7 @@
 - unless current_user?(@user)
   #follow_form
     - if current_user.following?(@user)
-      %button.btn.unfollow{data: {value: "#{current_user.id}"}} unfollow
+
+      %button.btn.unfollow{data: {id: "#{current_user.active_relationships.where("followed_id= ?", @user.id).first.id}"}} unfollow
     - else
-      %button.btn.btn-primary.follow{data:{id:RELATIONSHIPID}} follow
+      %button.btn.btn-primary.follow follow

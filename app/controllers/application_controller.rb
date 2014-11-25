@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  #protect_from_forgery
   before_filter :ransack
   before_filter :twitterfeed
   before_filter :all_users
