@@ -1,0 +1,10 @@
+= form_for @promote do |f|
+  - if @promote.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@promote.errors.count, "error")} prohibited this promote from being saved:"
+      %ul
+        - @promote.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

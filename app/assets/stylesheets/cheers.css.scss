@@ -44,6 +44,15 @@ li {
   }
 }
 
+
+.up-clicked, .down-clicked, .clicked {
+  color: rgba(7, 117, 187, 1.0);
+}
+
+.newupvote:hover, .newdownvote:hover, .changevotedown:hover, .changevoteup:hover {
+    cursor: pointer;
+}
+
 li:hover {
   background-color: rgba(245, 248, 250, 1.0);
 }

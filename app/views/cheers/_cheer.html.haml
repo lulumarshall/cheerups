@@ -10,8 +10,20 @@
   .timestamp
     Posted #{time_ago_in_words(cheer.created_at)} ago.
   .button_div
-    = link_to "<span class=\"glyphicon glyphicon-thumbs-up\"></span>".html_safe, cheerup_cheer_path(cheer), :class => "upvote", method: :get, remote: true, "data-type" => :json
-    .score_up{:id => "score_up-#{cheer.id}"}= cheer.cheerup_score
-    = link_to "<span class=\"glyphicon glyphicon-thumbs-down\"></span>".html_safe, cheerdown_cheer_path(cheer), :class => "downvote", method: :get, remote: true, "data-type" => :json
-    .score_down{:id => "score_down-#{cheer.id}"}= cheer.cheerdown_score
-
+    -if cheer.promotes.present?
+      -if cheer.promotes.last.status == "liked"
+        %span.glyphicon.glyphicon-thumbs-up.clicked{data: {id: "#{cheer.promotes.last.id}"}}
+        .score_up{:id => "score_up-#{cheer.id}"}= "#{cheer.promotes.where(status: 'liked').count}"
+        %span.glyphicon.glyphicon-thumbs-down.changevotedown{data: {id: "#{cheer.promotes.last.id}"}}
+        .score_down{:id => "score_down-#{cheer.id}"}= "#{cheer.promotes.where(status: 'dislike').count}"
+      -else
+        %span.glyphicon.glyphicon-thumbs-up.changevoteup{data: {id: "#{cheer.promotes.last.id}"}}
+        .score_up{:id => "score_up-#{cheer.id}"}= "#{cheer.promotes.where(status: 'liked').count}"
+        %span.glyphicon.glyphicon-thumbs-down.clicked{data: {id: "#{cheer.promotes.last.id}"}}
+        .score_down{:id => "score_down-#{cheer.id}"}= "#{cheer.promotes.where(status: 'dislike').count}"
+    -else
+      %span.glyphicon.glyphicon-thumbs-up.newupvote{data: {id: "#{cheer.id}"}}
+      .score_up{:id => "score_up-#{cheer.id}"}= "#{cheer.promotes.where(status: 'liked').count}"
+      %span.glyphicon.glyphicon-thumbs-down.newdownvote{data: {id: "#{cheer.id}"}}
+      .score_down{:id => "score_down-#{cheer.id}"}= "#{cheer.promotes.where(status: 'dislike').count}"
+    / cheer.cheerup_score

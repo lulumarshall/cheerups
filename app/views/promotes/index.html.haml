@@ -1,0 +1,17 @@
+%h1 Listing promotes
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @promotes.each do |promote|
+    %tr
+      %td= link_to 'Show', promote
+      %td= link_to 'Edit', edit_promote_path(promote)
+      %td= link_to 'Destroy', promote, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Promote', new_promote_path

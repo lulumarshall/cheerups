@@ -11,6 +11,7 @@ Cheerups::Application.routes.draw do
   root :to => "cheers#index"
 
   resources :relationships, only: [:create, :destroy]
+  resources :promotes
 
   match '/ajax/users', to: 'autocomplete#users', as: :ajax
 
